@@ -1,4 +1,4 @@
-import { Salad, ShoppingCart, User } from "lucide-react";
+import { Salad, User } from "lucide-react";
 import { SearchBar } from "./shad/searchBar";
 import { Button } from "./ui/button";
 import { CartDrawer } from "./shad/cartDrawer";

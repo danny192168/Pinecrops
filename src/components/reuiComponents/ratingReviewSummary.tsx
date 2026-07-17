@@ -1,5 +1,3 @@
-import { Rating } from "@/components/reui/rating";
-
 import { Progress } from "@/components/ui/progress";
 import { Star } from "lucide-react";
 
