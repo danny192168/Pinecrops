@@ -2,7 +2,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ListingCard } from "@/components/shadComponents/listingCard";
 import { ListingNavLinks } from "@/components/shadComponents/listingNavLinks";
-import { ListingsCarousel } from "@/components/shadComponents/listingsCarousel";
+// import { ListingsCarousel } from "@/components/shadComponents/listingsCarousel";
 
 export function Listings() {
   return (

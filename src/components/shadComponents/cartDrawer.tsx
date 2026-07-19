@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +24,7 @@ import {
   FieldTitle,
 } from "@/components/ui/field";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { MoreHorizontalIcon, ShoppingCart, Trash } from "lucide-react";
+import { MoreHorizontalIcon, ShoppingCart } from "lucide-react";
 import { QuantityNumberField } from "../reuiComponents/quantityNumberField";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import {

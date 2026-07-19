@@ -4,7 +4,7 @@ import {
   NumberFieldGroup,
   NumberFieldIncrement,
   NumberFieldInput,
-  NumberFieldScrubArea,
+  // NumberFieldScrubArea,
 } from "@/components/reui/number-field";
 
 export function QuantityNumberField() {
