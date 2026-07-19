@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 export function Footer() {
   return (
     <div className="bg-gray-800 mt-auto pt-8 text-white">
-      <div className="max-w-5xl mx-auto mb-1">
+      <div className="max-w-6xl mx-auto mb-1">
         <div className="flex justify-between flex-wrap">
           {/* company logo and slogan and networks */}
           <div className="flex flex-col gap-2 p-2 justify-between w-full lg:w-auto">

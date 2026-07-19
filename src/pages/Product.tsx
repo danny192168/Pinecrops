@@ -3,7 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { Rating } from "@/components/reui/rating";
 import { RatingReviewSummary } from "@/components/reuiComponents/ratingReviewSummary";
 import { ReviewBox } from "@/components/reviewBox";
-import { ProductCarousel } from "@/components/shad/productCarousel";
+import { ProductCarousel } from "@/components/shadComponents/productCarousel";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";

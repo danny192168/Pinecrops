@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { useState } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
-import { StarIcon } from "lucide-react"
+import { cn } from "@/lib/utils";
+import { StarIcon } from "lucide-react";
 
 const ratingVariants = cva("flex items-center", {
   variants: {
     size: {
+      xs: "gap-1",
       sm: "gap-2",
       default: "gap-2.5",
       lg: "gap-3",
@@ -17,11 +18,12 @@ const ratingVariants = cva("flex items-center", {
   defaultVariants: {
     size: "default",
   },
-})
+});
 
 const starVariants = cva("", {
   variants: {
     size: {
+      xs: "w-3 h-3",
       sm: "w-4 h-4",
       default: "w-5 h-5",
       lg: "w-6 h-6",
@@ -30,11 +32,12 @@ const starVariants = cva("", {
   defaultVariants: {
     size: "default",
   },
-})
+});
 
 const valueVariants = cva("text-muted-foreground w-5", {
   variants: {
     size: {
+      xs: "text-xs",
       sm: "text-xs",
       default: "text-sm",
       lg: "text-base",
@@ -43,7 +46,7 @@ const valueVariants = cva("text-muted-foreground w-5", {
   defaultVariants: {
     size: "default",
   },
-})
+});
 
 function Rating({
   rating,
@@ -60,59 +63,56 @@ function Rating({
     /**
      * Current rating value (supports decimal values for partial stars)
      */
-    rating: number
+    rating: number;
     /**
      * Maximum rating value (number of stars to show)
      */
-    maxRating?: number
+    maxRating?: number;
     /**
      * Whether to show the numeric rating value
      */
-    showValue?: boolean
+    showValue?: boolean;
     /**
      * Class name for the value span
      */
-    starClassName?: string
+    starClassName?: string;
     /**
      * Whether the rating is editable (clickable)
      */
-    editable?: boolean
+    editable?: boolean;
     /**
      * Callback function called when rating changes
      */
-    onRatingChange?: (rating: number) => void
+    onRatingChange?: (rating: number) => void;
   }) {
-  const [hoveredRating, setHoveredRating] = useState<number | null>(null)
-  const displayRating =
-    editable && hoveredRating !== null ? hoveredRating : rating
+  const [hoveredRating, setHoveredRating] = useState<number | null>(null);
+  const displayRating = editable && hoveredRating !== null ? hoveredRating : rating;
 
   const handleStarClick = (starRating: number) => {
     if (editable && onRatingChange) {
-      onRatingChange(starRating)
+      onRatingChange(starRating);
     }
-  }
+  };
 
   const handleStarMouseEnter = (starRating: number) => {
     if (editable) {
-      setHoveredRating(starRating)
+      setHoveredRating(starRating);
     }
-  }
+  };
 
   const handleStarMouseLeave = () => {
     if (editable) {
-      setHoveredRating(null)
+      setHoveredRating(null);
     }
-  }
+  };
 
   const renderStars = () => {
-    const stars = []
+    const stars = [];
 
     for (let i = 1; i <= maxRating; i++) {
-      const filled = displayRating >= i
-      const partiallyFilled = displayRating > i - 1 && displayRating < i
-      const fillPercentage = partiallyFilled
-        ? (displayRating - (i - 1)) * 100
-        : 0
+      const filled = displayRating >= i;
+      const partiallyFilled = displayRating > i - 1 && displayRating < i;
+      const fillPercentage = partiallyFilled ? (displayRating - (i - 1)) * 100 : 0;
 
       stars.push(
         <div
@@ -123,7 +123,10 @@ function Rating({
           onMouseLeave={handleStarMouseLeave}
         >
           {/* Background star (empty) */}
-          <StarIcon data-slot="rating-star-empty" className={cn(starVariants({ size }), "text-muted-foreground/30")} />
+          <StarIcon
+            data-slot="rating-star-empty"
+            className={cn(starVariants({ size }), "text-muted-foreground/30")}
+          />
 
           {/* Filled star */}
           <div
@@ -132,35 +135,28 @@ function Rating({
               width: filled ? "100%" : `${fillPercentage}%`,
             }}
           >
-            <StarIcon data-slot="rating-star-filled" className={cn(
-                                  starVariants({ size }),
-                                  "fill-yellow-400 text-yellow-400"
-                                )} />
+            <StarIcon
+              data-slot="rating-star-filled"
+              className={cn(starVariants({ size }), "fill-yellow-400 text-yellow-400")}
+            />
           </div>
-        </div>
-      )
+        </div>,
+      );
     }
 
-    return stars
-  }
+    return stars;
+  };
 
   return (
-    <div
-      data-slot="rating"
-      className={cn(ratingVariants({ size }), className)}
-      {...props}
-    >
+    <div data-slot="rating" className={cn(ratingVariants({ size }), className)} {...props}>
       <div className="flex items-center">{renderStars()}</div>
       {showValue && (
-        <span
-          data-slot="rating-value"
-          className={cn(valueVariants({ size }), starClassName)}
-        >
+        <span data-slot="rating-value" className={cn(valueVariants({ size }), starClassName)}>
           {displayRating.toFixed(1)}
         </span>
       )}
     </div>
-  )
+  );
 }
 
-export { Rating }
+export { Rating };

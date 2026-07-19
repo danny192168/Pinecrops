@@ -7,10 +7,10 @@ import { Product } from "./pages/Product";
 function App() {
   return (
     <div>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Routes>
-          <Route path="" element={<Home />} />
-          <Route path="listings" element={<Listings />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Listings />} />
           <Route path="product" element={<Product />} />
           <Route path="/*" element={<h1>404 Not found</h1>} />
         </Routes>
