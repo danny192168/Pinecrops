@@ -7,7 +7,7 @@ import { Product } from "./pages/Product";
 function App() {
   return (
     <div>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Listings />} />
