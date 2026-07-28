@@ -74,10 +74,10 @@ export function CartDrawer() {
     >
       <DrawerTrigger
         render={
-          <Button>
-            <ShoppingCart />
-            <span className="hidden sm:inline text-xs">cart</span>
-          </Button>
+          <button className="flex items-center flex-col gap-0 text-gray-300 hover:text-main">
+            <ShoppingCart className="w-4.5 h-4.5" />
+            <span className="whitespace-nowrap text-xs">view cart</span>
+          </button>
         }
       />
       <DrawerContent>

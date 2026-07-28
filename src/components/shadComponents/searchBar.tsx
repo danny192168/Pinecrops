@@ -5,8 +5,9 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/in
 
 export function SearchBar() {
   return (
-    <Field className="max-w-xs">
-      <InputGroup className="bg-secondary">
+    // <Field className="max-w-xs">
+    <Field className="flex-1">
+      <InputGroup className="bg-secondary rounded-full p-4">
         <InputGroupInput
           id="inline-start-input"
           className="text-gray-700"
