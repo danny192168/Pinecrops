@@ -11,7 +11,7 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { BadgeCheckIcon, BellIcon, CreditCardIcon, LogOutIcon, Plus } from "lucide-react";
+import { BadgeCheckIcon, BellIcon, CreditCardIcon, LogOutIcon } from "lucide-react";
 import { NewListingModal } from "./newListingModal";
 import {
   DropdownMenu,

@@ -1,25 +1,14 @@
-import {
-  ChevronDown,
-  Languages,
-  Package,
-  Package2,
-  PackageOpenIcon,
-  Salad,
-  Truck,
-  User,
-} from "lucide-react";
+import { Languages, Package2, PackageOpenIcon } from "lucide-react";
 import { SearchBar } from "./shadComponents/searchBar";
 import { Button } from "./ui/button";
 import { CartDrawer } from "./shadComponents/cartDrawer";
 import { Link } from "react-router";
-import { TopNavbarLinks } from "./shadComponents/topNavbarLinks";
 import { Separator } from "./ui/separator";
 
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -30,10 +19,9 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SiBuymeacoffee, SiCashapp, SiGithub, SiPaypal } from "@icons-pack/react-simple-icons";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type childProps = {

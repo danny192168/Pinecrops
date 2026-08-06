@@ -162,7 +162,7 @@ export function CartDrawer() {
             </div>
             <div className="w-full gap-2 flex flex-col">
               <DrawerClose render={<Button variant="outline">Cancel</Button>} />
-              <Button className="h-[34px]">Confirm Delivery Time</Button>
+              <Button className="h-8.5">Confirm Delivery Time</Button>
             </div>
           </div>
         </DrawerFooter>

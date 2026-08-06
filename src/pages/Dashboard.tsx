@@ -1,15 +1,4 @@
-import { Footer } from "@/components/footer";
 import { Navbar } from "../components/navbar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { ListIcon, Plus, Edit3 } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { ListingCard } from "@/components/shadComponents/listingCard";
-import { NewListingModal } from "@/components/shadComponents/newListingModal";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/shadComponents/appSidebar";
 

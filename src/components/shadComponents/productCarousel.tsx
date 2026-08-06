@@ -12,8 +12,8 @@ import { useState } from "react";
 //   // CarouselPrevious,
 //   type CarouselApi,
 // } from "@/components/ui/carousel";
-import { Skeleton } from "../ui/skeleton";
-import { ImageCarousel } from "./imageCarousel";
+// import { Skeleton } from "../ui/skeleton";
+// import { ImageCarousel } from "./imageCarousel";
 // import { Badge } from "../ui/badge";
 // import { Button } from "../ui/button";
 // import { MapPin, MessageCircleMore, Star } from "lucide-react";

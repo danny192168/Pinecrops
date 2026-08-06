@@ -1,10 +1,8 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router";
@@ -13,7 +11,7 @@ import { SearchFilterDrawer } from "./searchFilterDrawer";
 export function ListingNavLinks() {
   return (
     <div className="flex justify-between p-2">
-      <NavigationMenu className="class [&_[data-slot='navigation-menu-link']]:border [&_[data-slot='navigation-menu-link']]:">
+      <NavigationMenu className="class **:data-[slot='navigation-menu-link']:border [&_[data-slot='navigation-menu-link']]:">
         <NavigationMenuList className="gap-1">
           <NavigationMenuItem>
             <NavigationMenuLink
@@ -65,27 +63,5 @@ export function ListingNavLinks() {
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  );
-}
-
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink
-        render={
-          <Link to={href}>
-            <div className="flex flex-col gap-1 text-sm">
-              <div className="leading-none font-medium">{title}</div>
-              <div className="line-clamp-2 text-muted-foreground">{children}</div>
-            </div>
-          </Link>
-        }
-      />
-    </li>
   );
 }
