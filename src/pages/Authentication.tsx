@@ -11,20 +11,21 @@ export function Authentication() {
   const [mode, setMode] = React.useState<"signin" | "signup">("signin");
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* <Navbar /> */}
-      {/* <main className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-md items-center justify-center px-4 py-10 sm:px-6 lg:px-8"> */}
-      <main className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-xl items-center justify-center p-4">
-        <Card className="w-full overflow-hidden shadow-2xl shadow-slate-900/50 p-0 gap-0">
-          <div className="flex flex-col justify-between bg-[#1a1c37] p-4 sm:p-6 lg:p-10 text-background">
-            <div className="flex items-center gap-2">
-              <PackageOpen className="h-5 w-5 text-main" />
-              <span className="text-xl font-semibold">Pinestore</span>
+    <>
+      <title>Authentication</title>
+      <div className="flex min-h-screen items-center justify-center p-2">
+        {/* <Navbar /> */}
+        {/* <main className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-md items-center justify-center px-4 py-10 sm:px-6 lg:px-8"> */}
+        <Card className="w-full max-w-xl overflow-hidden shadow-2xl shadow-slate-900/50 p-0 gap-0">
+          <div className="bg-[#1a1c37] p-4 sm:p-8 text-white">
+            <div className="flex items-center gap-2 text-main">
+              <PackageOpen className="h-5 w-5" />
+              <span className="text-xl font-semibold text-white">Pinestore</span>
             </div>
-            <p className="mt-2 text-sm text-stone-200">One last step before you dig in.</p>
+            <p className="mt-2 text-sm text-stone-200">Please create or sign in account.</p>
           </div>
 
-          <CardContent className="w-md max-w-full mx-auto my-5 md:my-8">
+          <CardContent className="w-full mx-auto p-4 sm:p-8">
             <CardHeader className="p-0 mb-4">
               <div>
                 <CardTitle className="text-xl font-semibold">
@@ -136,7 +137,7 @@ export function Authentication() {
             </div>
           </CardContent>
         </Card>
-      </main>
-    </div>
+      </div>
+    </>
   );
 }

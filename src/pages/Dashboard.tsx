@@ -88,19 +88,23 @@ export function Dashboard() {
 
   return (
     <>
-      <SidebarProvider>
-        <AppSidebar />
-        <div>
-          <Navbar limitWidth={false} />
-          <section className="mx-auto space-y-6 px-2 py-4">
-            <Separator />
-            <div className="p-2">
-              <h2>Your Products</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2">
-                {productItems.map((item) => (
-                  <ListingCard key={item.id} {...item} />
-                ))}
-                {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+      <title>Dashboard</title>
+      <div className="flex w-full min-w-0">
+        {/* <div className="p-2 bg-[#1a1c37] absolute right-0 z-100 h-screen border-background/10 border">
+        Duck
+      </div> */}
+        <SidebarProvider className="w-full max-w-full overflow-hidden">
+          <AppSidebar />
+          <div className="min-w-0 flex-1">
+            <Navbar limitWidth={false} />
+            <section className="mx-auto space-y-6 px-2 py-4">
+              <div className="p-2">
+                <h2>Your Products</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-2">
+                  {productItems.map((item) => (
+                    <ListingCard key={item.id} {...item} />
+                  ))}
+                  {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
               <Card size="sm">
                 <CardHeader>
                   <Skeleton className="h-4" />
@@ -112,12 +116,13 @@ export function Dashboard() {
                 </CardContent>
               </Card>
             ))} */}
+                </div>
               </div>
-            </div>
-          </section>
-          {/* <Footer /> */}
-        </div>
-      </SidebarProvider>
+            </section>
+            {/* <Footer /> */}
+          </div>
+        </SidebarProvider>
+      </div>
     </>
   );
 }

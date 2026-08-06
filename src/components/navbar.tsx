@@ -37,12 +37,12 @@ import { SiBuymeacoffee, SiCashapp, SiGithub, SiPaypal } from "@icons-pack/react
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 type childProps = {
-  limitWidth?: boolean | false;
+  limitWidth?: boolean;
 };
 
 export function Navbar({ limitWidth }: childProps) {
   return (
-    <nav className="bg-[#1a1c37] text-white sticky z-10 top-0">
+    <nav className="bg-[#1a1c37] text-white sticky z-10 top-0 overflow-hidden">
       <div>
         <div className="bg-main/0">
           <div
@@ -181,7 +181,9 @@ export function Navbar({ limitWidth }: childProps) {
           </div>
         </div>
 
-        <div className="flex max-w-6xl mx-auto px-2 py-2 items-center justify-between gap-2">
+        <div
+          className={`flex mx-auto px-2 py-2 items-center justify-between gap-2 ${limitWidth ? "max-w-6xl" : ""}`}
+        >
           <Link to="/">
             <div className="flex items-center gap-2 text-[#46C855]">
               {/* <div className="grid place-items-center w-8 aspect-square bg-black/70 p-1 rounded-sm ">

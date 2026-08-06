@@ -16,7 +16,7 @@ export function ReviewBox({ reviewText }: ChildProps) {
         <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
         <span className="text-muted-foreground">Weight: 6.9kg</span>
       </div>
-      <p className="text-muted-foreground text-sm md:text-base">{reviewText}</p>
+      <p className="text-muted-foreground text-sm md:text-base font-light">{reviewText}</p>
     </div>
   );
 }

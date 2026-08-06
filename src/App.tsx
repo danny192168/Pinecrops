@@ -6,6 +6,7 @@ import { Product } from "./pages/Product";
 import { Dashboard } from "./pages/Dashboard";
 import { Authentication } from "./pages/Authentication";
 import AccountSetup from "./pages/AccountSetup";
+import { Sandbox } from "./pages/Sandbox";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="authentication" element={<Authentication />} />
           <Route path="account-setup" element={<AccountSetup />} />
+          <Route path="sandbox" element={<Sandbox />} />
           <Route path="/*" element={<h1>404 Not found</h1>} />
         </Routes>
       </Router>

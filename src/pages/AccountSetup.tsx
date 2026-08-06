@@ -82,126 +82,134 @@ export default function AccountSetup() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-stone-100 p-4">
-      <Card className="w-full max-w-xl overflow-hidden rounded-2xl border border-stone-200 shadow-xl p-0 gap-0">
-        <div className="bg-[#1a1c37] p-4 sm:p-8 text-white">
-          <div className="flex items-center gap-2 text-main">
-            <PackageOpen className="h-5 w-5" />
-            <span className="text-xl font-semibold">Pinestore</span>
-          </div>
-          <p className="mt-2 text-sm text-stone-200">One last step before you dig in.</p>
-        </div>
-
-        <CardContent className="p-4 sm:p-8">
-          <div className="mb-2">
-            <CardTitle className="text-xl font-semibold text-foreground">
-              Set up your account
-            </CardTitle>
-            <CardDescription className="mt-2 text-sm text-muted-foreground">
-              Tell us a bit about yourself so we can tailor Pinestore for you.
-            </CardDescription>
+    <>
+      <title>Account Setup</title>
+      <div className="flex min-h-screen items-center justify-center p-2">
+        <Card className="w-full max-w-xl overflow-hidden shadow-2xl shadow-slate-900/50 p-0 gap-0">
+          <div className="bg-[#1a1c37] p-4 sm:p-8 text-white">
+            <div className="flex items-center gap-2 text-main">
+              <PackageOpen className="h-5 w-5" />
+              <span className="text-xl font-semibold text-white">Pinestore</span>
+            </div>
+            <p className="mt-2 text-sm text-stone-200">One last step before you dig in.</p>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="flex flex-col items-center gap-2 m-2">
-              <div className="relative h-22 w-22 sm:h-24 sm:w-24">
-                <div className="flex h-22 w-22 sm:h-24 sm:w-24 items-center justify-center overflow-hidden rounded-full border-2 border-stone-200 bg-stone-100">
-                  {avatarPreview ? (
-                    <img
-                      src={avatarPreview}
-                      alt="Profile preview"
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <User className="h-9 w-9 sm:h-10 sm:w-10 text-stone-400" />
-                  )}
+          <CardContent className="p-4 sm:p-8">
+            <div className="mb-2">
+              <CardTitle className="text-xl font-semibold text-foreground">
+                Set up your account
+              </CardTitle>
+              <CardDescription className="mt-2 text-sm text-muted-foreground">
+                Tell us a bit about yourself so we can tailor Pinestore for you.
+              </CardDescription>
+            </div>
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="flex flex-col items-center gap-2 m-2">
+                <div className="relative h-22 w-22 sm:h-24 sm:w-24">
+                  <div className="flex h-22 w-22 sm:h-24 sm:w-24 items-center justify-center overflow-hidden rounded-full border-2">
+                    {avatarPreview ? (
+                      <img
+                        src={avatarPreview}
+                        alt="Profile preview"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <User className="h-9 w-9 sm:h-10 sm:w-10 text-stone-400" />
+                    )}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleAvatarPick}
+                    aria-label="Upload profile picture"
+                    className="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-md hover:opacity-90"
+                  >
+                    <Camera className="h-4 w-4" />
+                  </button>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleAvatarChange}
+                    className="hidden"
+                  />
                 </div>
                 <button
                   type="button"
                   onClick={handleAvatarPick}
-                  aria-label="Upload profile picture"
-                  className="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-md hover:opacity-90"
+                  className="text-xs font-medium text-primary hover:underline"
                 >
-                  <Camera className="h-4 w-4" />
+                  {avatarPreview ? "Change photo" : "Add a profile photo"}
                 </button>
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  onChange={handleAvatarChange}
-                  className="hidden"
-                />
-              </div>
-              <button
-                type="button"
-                onClick={handleAvatarPick}
-                className="text-xs font-medium text-primary hover:underline"
-              >
-                {avatarPreview ? "Change photo" : "Add a profile photo"}
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <Label htmlFor="username" className="mb-2">
-                  Username
-                </Label>
-                <Input
-                  id="username"
-                  placeholder="e.g. freshpicks_maria"
-                  required
-                  value={username}
-                  className="rounded-sm"
-                  onChange={(e) => setUsername(e.target.value)}
-                />
               </div>
 
-              <div>
-                <Label htmlFor="city" className="mb-2">
-                  City / Municipality
-                </Label>
-                <div className="relative">
-                  <MapPin className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400" />
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="username" className="mb-2">
+                    Username
+                  </Label>
                   <Input
-                    id="city"
-                    placeholder="e.g. Angeles City"
+                    id="username"
+                    placeholder="e.g. freshpicks_maria"
                     required
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    className="rounded-sm pl-9"
+                    value={username}
+                    className="rounded-sm"
+                    onChange={(e) => setUsername(e.target.value)}
                   />
+                </div>
+
+                <div>
+                  <Label htmlFor="city" className="mb-2">
+                    City / Municipality
+                  </Label>
+                  <div className="relative">
+                    <MapPin className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400" />
+                    <Input
+                      id="city"
+                      placeholder="e.g. Angeles City"
+                      required
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      className="rounded-sm pl-9"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label className="mb-2">I'm here mainly as a</Label>
+                  <div className="grid grid-cols-2 gap-3">
+                    <ChoiceCard
+                      checked={role === "buyer"}
+                      icon={ShoppingBasket}
+                      title="Buyer"
+                      description="I want to shop for fresh produce"
+                      onSelect={() => setRole("buyer")}
+                    />
+                    <ChoiceCard
+                      checked={role === "seller"}
+                      icon={Store}
+                      title="Seller"
+                      description="I want to sell my own produce"
+                      onSelect={() => setRole("seller")}
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <Label className="mb-2">I'm here mainly as a</Label>
-                <div className="grid grid-cols-2 gap-3">
-                  <ChoiceCard
-                    checked={role === "buyer"}
-                    icon={ShoppingBasket}
-                    title="Buyer"
-                    description="I want to shop for fresh produce"
-                    onSelect={() => setRole("buyer")}
-                  />
-                  <ChoiceCard
-                    checked={role === "seller"}
-                    icon={Store}
-                    title="Seller"
-                    description="I want to sell my own produce"
-                    onSelect={() => setRole("seller")}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <CardFooter className="p-0">
-              <Button type="submit" size="lg" className="w-full bg-brownish" disabled={!isComplete}>
-                Finish setup
-              </Button>
-            </CardFooter>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+              <CardFooter className="p-0">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-brownish"
+                  disabled={!isComplete}
+                >
+                  Finish setup
+                </Button>
+              </CardFooter>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }

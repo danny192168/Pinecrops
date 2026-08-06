@@ -13,7 +13,7 @@ const productItems = [
       "Fresh chayote squash with tender flesh, perfect for stir-fries, stews, and local Filipino dishes.",
     price: "P60.00",
     rating: 4.7,
-    tags: ["vegetable"],
+    category: ["vegetable"],
   },
   {
     id: "bell-pepper",
@@ -23,7 +23,7 @@ const productItems = [
       "Bright and crunchy bell peppers with sweet flesh, great for salads, grilling, and stir-fries.",
     price: "P35.50",
     rating: 4.6,
-    tags: ["vegetable"],
+    category: ["vegetable"],
   },
   {
     id: "green-cabbage",
@@ -33,7 +33,7 @@ const productItems = [
       "Crisp green cabbage heads ideal for coleslaw, soups, and hearty vegetable dishes.",
     price: "P42.00",
     rating: 4.3,
-    tags: ["vegetable"],
+    category: ["vegetable"],
   },
   {
     id: "sagada-coffee",
@@ -43,7 +43,7 @@ const productItems = [
       "Rich locally roasted coffee beans from Sagada with bright citrus notes and a smooth finish. Rich locally roasted coffee beans from Sagada with bright citrus notes and a smooth finish. Rich locally roasted coffee beans from Sagada with bright citrus notes and a smooth finish. ",
     price: "P120.00",
     rating: 4.5,
-    tags: ["packaged", "sagada"],
+    category: ["packaged", "sagada"],
   },
   {
     id: "baguio-jam",
@@ -52,7 +52,7 @@ const productItems = [
     description: "Sweet berry jam made from fresh Baguio fruit, perfect for toast and desserts.",
     price: "P220.00",
     rating: 4.4,
-    tags: ["packaged", "baguio"],
+    category: ["packaged", "baguio"],
   },
   {
     id: "etag-smoked-meat",
@@ -62,7 +62,7 @@ const productItems = [
       "Traditional smoked etag meat from Sagada with deep savory flavor for heirloom Filipino recipes.",
     price: "P380.00",
     rating: 4.6,
-    tags: ["packaged"],
+    category: ["packaged"],
   },
   {
     id: "carrot",
@@ -72,14 +72,15 @@ const productItems = [
       "Traditional smoked etag meat from Sagada with deep savory flavor for heirloom Filipino recipes.",
     price: "P380.00",
     rating: 4.6,
-    tags: ["packaged"],
+    category: ["packaged"],
   },
 ];
 
 export function Listings() {
   return (
     <>
-      <Navbar />
+      <title>Listings</title>
+      <Navbar limitWidth={true} />
       <section className="max-w-6xl mx-auto">
         {/* <ListingsCarousel /> */}
         <ListingNavLinks />

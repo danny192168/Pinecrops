@@ -22,7 +22,7 @@ export function NewListingModal() {
         <DialogTrigger
           render={
             <SidebarMenuButton
-              className="bg-brownish hover:bg-brownish/50 text-white flex justify-center"
+              className="bg-main text-foreground hover:bg-brownish/50 flex justify-center"
               render={
                 <span className="flex items-center gap-2 justify-center">
                   <Plus />

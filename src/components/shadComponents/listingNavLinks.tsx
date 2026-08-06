@@ -8,17 +8,18 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router";
+import { SearchFilterDrawer } from "./searchFilterDrawer";
 
 export function ListingNavLinks() {
   return (
-    <div className="flex justify-between">
-      <NavigationMenu>
-        <NavigationMenuList>
+    <div className="flex justify-between p-2">
+      <NavigationMenu className="class [&_[data-slot='navigation-menu-link']]:border [&_[data-slot='navigation-menu-link']]:">
+        <NavigationMenuList className="gap-1">
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink>Link</NavigationMenuLink>
-            </NavigationMenuContent>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle()}
+              render={<SearchFilterDrawer />}
+            />
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
@@ -29,41 +30,13 @@ export function ListingNavLinks() {
           <NavigationMenuItem>
             <NavigationMenuLink
               className={navigationMenuTriggerStyle()}
-              render={<Link to="/#">Fruits</Link>}
+              render={<Link to="/#">Drinks</Link>}
             />
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
               className={navigationMenuTriggerStyle()}
-              render={<Link to="/#">Bundle</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link to="/#">Sell on the Market</Link>}
-            />
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="w-96">
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built with Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={navigationMenuTriggerStyle()}
-              render={<Link to="/#"></Link>}
+              render={<Link to="/#">Brands</Link>}
             />
           </NavigationMenuItem>
         </NavigationMenuList>

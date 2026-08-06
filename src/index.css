@@ -18,7 +18,6 @@ html {
 }
 
 body {
-  /* min-height: 100vh; */
 }
 
 .font-wellfleet {
@@ -205,4 +204,5 @@ h4 {
 
 @theme {
   --breakpoint-xss: 25rem;
+  --breakpoint-xs: 30rem; /* 480px, adjust as needed */
 }
