@@ -1,4 +1,5 @@
 import { Navbar } from "../components/navbar";
+import { ListingCard } from "@/components/shadComponents/listingCard";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/shadComponents/appSidebar";
 
