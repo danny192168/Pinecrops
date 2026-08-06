@@ -1,19 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Camera, MapPin, PackageOpen, ShoppingBasket, Store, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardContent, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const ACCENT = "#8b5e3c";
-const HEADER_BG = "#1a1c37";
 
 type Role = "buyer" | "seller" | null;
 
@@ -21,7 +13,7 @@ type ChoiceCardProps = {
   checked: boolean;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
-  description: string;
+  description?: string;
   onSelect: () => void;
 };
 
@@ -36,7 +28,7 @@ function RadioDot({ checked }: { checked: boolean }) {
   );
 }
 
-function ChoiceCard({ checked, icon: Icon, title, description, onSelect }: ChoiceCardProps) {
+function ChoiceCard({ checked, icon: Icon, title, onSelect }: ChoiceCardProps) {
   return (
     <button
       type="button"
@@ -182,14 +174,12 @@ export default function AccountSetup() {
                       checked={role === "buyer"}
                       icon={ShoppingBasket}
                       title="Buyer"
-                      description="I want to shop for fresh produce"
                       onSelect={() => setRole("buyer")}
                     />
                     <ChoiceCard
                       checked={role === "seller"}
                       icon={Store}
                       title="Seller"
-                      description="I want to sell my own produce"
                       onSelect={() => setRole("seller")}
                     />
                   </div>
