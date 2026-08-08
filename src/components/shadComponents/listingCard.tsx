@@ -12,7 +12,6 @@ import { Link } from "react-router";
 import { Rating } from "../reui/rating";
 import { Skeleton } from "../ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import { Heart, ShoppingBasketIcon } from "lucide-react";
 
 type ProductCardProps = {
   src: string;
