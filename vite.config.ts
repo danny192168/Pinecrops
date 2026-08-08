@@ -7,10 +7,10 @@ import babel from "@rolldown/plugin-babel";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), babel({ presets: [reactCompilerPreset()] })],
-  base: process.env.VITE_BASE_PATH || "/Pinecrops",
+  // base: process.env.VITE_BASE_PATH || "/Pinecrops",
 
   // uncomment this and swap to one above when ready to deploy on vercel:
-  // base: '/',
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
