@@ -31,7 +31,7 @@ export function ImageCarousel() {
   }, [api]);
 
   return (
-    <div className="mx-auto max-w-[10rem] sm:max-w-xs sm:hidden">
+    <div className="mx-auto max-w-40 sm:max-w-xs sm:hidden">
       <Carousel setApi={setApi} className="w-full max-w-xs">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
