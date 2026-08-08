@@ -13,7 +13,7 @@ const productItems = [
       "Fresh chayote squash with tender flesh, perfect for stir-fries, stews, and local Filipino dishes.",
     price: "P60.00",
     rating: 4.7,
-    category: ["vegetable"],
+    category: ["vegetable, best-seller"],
   },
   {
     id: "bell-pepper",
@@ -33,7 +33,7 @@ const productItems = [
       "Crisp green cabbage heads ideal for coleslaw, soups, and hearty vegetable dishes.",
     price: "P42.00",
     rating: 4.3,
-    category: ["vegetable"],
+    category: ["vegetable, best-seller"],
   },
   {
     id: "sagada-coffee",
@@ -72,7 +72,7 @@ const productItems = [
       "Traditional smoked etag meat from Sagada with deep savory flavor for heirloom Filipino recipes.",
     price: "P380.00",
     rating: 4.6,
-    category: ["packaged"],
+    category: ["packaged, best-seller"],
   },
 ];
 
@@ -84,7 +84,7 @@ export function Listings() {
       <section className="max-w-6xl mx-auto">
         {/* <ListingsCarousel /> */}
         <ListingNavLinks />
-        <h1 className="p-2">Best Sellers</h1>
+        <h2 className="px-2">Best Sellers</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 p-2">
           {productItems.map((item) => (
             <ListingCard key={item.id} {...item} />
